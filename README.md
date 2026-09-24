@@ -23,13 +23,15 @@ A pasta `dist/` é o site pronto. O `wrangler.toml` já aponta o Cloudflare Page
 
 ## Onde mudar cada coisa
 
-- **Textos, consultas e dúvidas:** `index.html`. Cada fase da linha do cuidado é um
-  `<article class="panel">`.
+- **Textos e consultas:** `index.html`. Cada tipo de consulta é um `<li class="mod">`, e as
+  observações são os dois `<details class="acc">`.
 - **Cores e estilos:** `src/style.css`. As cores ficam no bloco `:root`, no topo.
 - **Regras de design:** `DESIGN.md`.
 
 ## WhatsApp
 
-Todos os botões usam o WhatsApp da Clínica Santa Lourdes: `+55 92 98423-5695`
-(`5592984235695` nos links `wa.me`). Cada link já leva a mensagem pronta no parâmetro `text`.
+Os botões de cada consulta, o horário alternativo e o rodapé usam o WhatsApp da Clínica Santa
+Lourdes: `+55 92 98423-5695` (`5592984235695` nos links `wa.me`). Cada link de consulta já leva
+a mensagem pronta no parâmetro `text`. O botão "Agendar consulta" do topo leva até a seção
+"Marque sua consulta".
 Se o número mudar, troque em todos os `wa.me/5592984235695` do `index.html`.

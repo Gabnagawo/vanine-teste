@@ -1,5 +1,5 @@
 // Tudo aqui é acabamento. A página é completa sem este arquivo:
-// a escolha da fase funciona só com CSS e todo o texto está no HTML.
+// todo o texto está no HTML e as observações abrem com <details>.
 
 const io = (cb, opts) => ('IntersectionObserver' in window ? new IntersectionObserver(cb, opts) : null)
 
@@ -19,11 +19,10 @@ if (revealer) reveals.forEach((el) => revealer.observe(el))
 else reveals.forEach((el) => el.classList.add('in'))
 
 // Barra fixa do celular: aparece depois que o botão do topo sai da tela
-// e some onde já existe um botão melhor à vista (o cartão da fase, a
-// chamada final e o rodapé).
+// e some enquanto os cartões com os botões de agendar estão à vista.
 const bar = document.getElementById('bar')
 const heroCta = document.getElementById('hero-cta')
-const covers = ['.panels', '#final', '#rodape'].map((s) => document.querySelector(s)).filter(Boolean)
+const covers = ['.modalidades'].map((s) => document.querySelector(s)).filter(Boolean)
 let heroGone = false
 const covering = new Set()
 const syncBar = () => bar.classList.toggle('show', heroGone && covering.size === 0)
@@ -42,12 +41,12 @@ if (barWatcher && bar && heroCta) {
   bar.classList.add('show')
 }
 
-// O halo da fase escolhida só respira quando a seção está na tela.
-const fases = document.getElementById('consultas')
-const fasesWatcher = io((entries) => {
-  for (const e of entries) fases.classList.toggle('on', e.isIntersecting)
+// A foto do topo só respira quando está na tela.
+const hero = document.querySelector('.hero')
+const heroWatcher = io((entries) => {
+  for (const e of entries) hero.classList.toggle('on', e.isIntersecting)
 })
-if (fasesWatcher && fases) fasesWatcher.observe(fases)
+if (heroWatcher && hero) heroWatcher.observe(hero)
 
 // Aba escondida: pausa toda animação.
 document.addEventListener('visibilitychange', () => {
