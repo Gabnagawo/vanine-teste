@@ -1,15 +1,9 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
-import { fileURLToPath } from 'url'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
+// Site estático: index.html + src/style.css + src/main.js.
+// `npm run build` gera a pasta dist/, publicada no Cloudflare Pages (wrangler.toml).
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
+  build: {
+    target: 'es2019',
   },
 })
