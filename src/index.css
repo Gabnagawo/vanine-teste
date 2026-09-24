@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Foco visível padrão (lilac-dark); elementos sage trocam só a cor via focus-visible:outline-sage-dark. */
+:focus-visible {
+  outline: 2px solid theme('colors.lilac.dark');
+  outline-offset: 2px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: theme('colors.offwhite');
+  color: theme('colors.ink');
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
+svg {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
