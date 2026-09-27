@@ -10,22 +10,24 @@ por decisão de design. O design mexe em cor, tipo, espaço, ordem visual dos bl
 
 **O Almanaque da Família.** O site se comporta como um livro de consulta ao qual a família
 volta sempre. A foto da Dra. Vanine confirma a ideia: ela está na estante de livros do
-consultório, segurando um livro chamado *mãe recém-nascida*. O topo fica na cor clara do site
-original, com a foto num quadro de cantos arredondados; o verde da parede aparece só no rodapé.
+consultório, segurando um livro chamado *mãe recém-nascida*. O site inteiro fica na cor clara do
+site original, com a foto num quadro de cantos arredondados.
 
 **Foco: celular.** Cada decisão começa em 375 px de largura.
 
 ## Ordem dos blocos
 
-1. **Topo** (claro, a cor do site original): logo, foto, selo da clínica, título e os dois botões.
-   O botão "Agendar consulta" aparece na primeira tela em qualquer celular (testado de 320 × 568
-   a 412 × 915).
+1. **Topo** (claro, a cor do site original). No celular, centralizado e nesta ordem: logo, selo
+   da clínica, título em duas linhas ("Cuidado pediátrico" / "em todas as fases da vida"), foto e
+   os dois botões. No desktop, a foto fica à esquerda e o texto com os botões à direita. Os dois
+   botões aparecem na primeira tela em qualquer celular (testado de 320 × 568 a 412 × 915).
 2. **Sobre a Dra. Vanine** (lilás claro): retrato e a bio. Veio para depois dos botões para o
    botão caber na primeira tela.
 3. **Marque sua consulta** (cinza): horários, horário alternativo, os cinco tipos de consulta e as
    notas de confirmação e cancelamento.
 4. **Observações**: os dois itens abrem e fecham com `<details>`, sem JavaScript.
-5. **Rodapé** (verde): identificação, endereço (que abre o mapa), WhatsApp e Instagram.
+5. **Rodapé** (claro, a cor do site original, separado por um fio): identificação, endereço (que
+   abre o mapa), WhatsApp e Instagram.
 
 No celular, uma barra fixa repete o botão "Agendar consulta" depois que o botão do topo sai da
 tela, e some enquanto os cartões com os botões de agendar estão à vista.
@@ -37,7 +39,7 @@ no bloco `:root`.
 
 | Token | Hex | Papel | Contraste |
 |---|---|---|---|
-| `--forest` | `#24392F` | A parede do consultório. Só o rodapé | papel por cima 11,6:1 |
+| `--forest` | `#24392F` | A parede do consultório. Só aparece enquanto a foto carrega | |
 | `--accent` | `#3F6152` | Botão principal sobre fundo claro | branco por cima 6,9:1 |
 | `--accent-muted` | `#DCEAE3` | Botões dos cartões, fundo do quadro de horários | tinta 11,5:1 |
 | `--sage-deep` | `#4A6B5B` | Ícones e a linha do tempo | 4,8:1 sobre sálvia clara |
